@@ -9,21 +9,20 @@
 <body>
   <div class="container" id="container">
     <div class="form-container sign-up-container">
-      <form action="">
+      <form id="signup-form">
         <h1>Create Account</h1>
-        <input type="text" placeholder="Name">
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Password">
-        <button>SIGN UP</button>
+        <input name="name" type="text" placeholder="Name" autocomplete="name" maxlength="80" required>
+        <input name="email" type="email" placeholder="Email" autocomplete="email" maxlength="254" required>
+        <input name="password" type="password" placeholder="Password" autocomplete="new-password" minlength="6" maxlength="128" required>
+        <button type="submit">SIGN UP</button>
       </form>
     </div>
     <div class="form-container sign-in-container">
-      <form action="">
+      <form id="login-form">
         <h1>Sign in</h1>
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Password">
-        <a href="#">Forgot your password?</a>
-        <button>SIGN IN</button>
+        <input name="email" type="email" placeholder="Email" autocomplete="email" maxlength="254" required>
+        <input name="password" type="password" placeholder="Password" autocomplete="current-password" maxlength="128" required>
+        <button type="submit">SIGN IN</button>
       </form>
     </div>
     <div class="overlay-container">
@@ -39,6 +38,8 @@
       </div>
     </div>
   </div>
+  <p id="message" role="status" aria-live="polite"></p>
+  <button id="logout" type="button" hidden>LOG OUT</button>
 </body>
 <script src="script.js"></script>
 

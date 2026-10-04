@@ -37,6 +37,24 @@ button:focus {
   outline: none;
 }
 
+#message {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+}
+
+#logout {
+  position: fixed;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  padding: 7px 16px;
+}
+
 h1 {
   font-size: 30px;
   font-weight: bold;
