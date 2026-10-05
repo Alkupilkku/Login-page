@@ -1,3 +1,6 @@
 users.db
 users.db-shm
 users.db-wal
+node_modules/
+dist/
+.netlify/
