@@ -16,4 +16,13 @@ for (const file of files) {
   fs.copyFileSync(source, path.join(output, file));
 }
 
+require('esbuild').buildSync({
+  entryPoints: [path.join(__dirname, 'netlify-auth.mjs')],
+  bundle: true,
+  platform: 'browser',
+  format: 'iife',
+  target: ['es2020'],
+  outfile: path.join(output, 'script.js'),
+});
+
 console.log(`Prepared static site in ${output}`);

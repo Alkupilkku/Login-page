@@ -21,7 +21,14 @@ async function sendForm(url, form) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(values)
   });
-  const result = await response.json();
+  let result;
+  try {
+    result = await response.json();
+  } catch {
+    throw new Error(response.ok
+      ? "The server returned an invalid response. Please try again."
+      : `Request failed (${response.status}). Please try again.`);
+  }
   if (!response.ok) throw new Error(result.error || "Something went wrong");
   return result;
 }
