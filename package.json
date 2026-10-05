@@ -6,6 +6,15 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node scripts/build.js",
+    "deploy": "npm run build && npx --yes netlify-cli deploy --prod --dir=dist",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/identity": "^2.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }
