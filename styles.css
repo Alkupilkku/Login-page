@@ -25,7 +25,12 @@ button {
   cursor: pointer;
     transition: transform 80ms ease-in;
 }
-
+p{
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
 button.ghost {
   background: transparent;
   border-color: #fff;
